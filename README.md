@@ -20,3 +20,23 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/SimpleHTTP.git
 cd SimpleHTTP
+
+## Usage
+```python3
+from SimpleHTTP import App, Response, HtmlResponse
+from http import HTTPStatus
+
+app = App()
+
+def serve(request):
+    return Response(HTTPStatus.OK, "aman")
+
+def index(request):
+    return HtmlResponse(HTTPStatus.OK, "hello.html")
+
+if __name__=="__main__":
+    app.register("GET", "", serve)
+    app.register("GET", "/index", index)
+    app.start()
+
+```
