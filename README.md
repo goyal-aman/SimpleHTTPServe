@@ -56,3 +56,6 @@ Clone your forked repository to your local machine.
 ```bash
 git clone https://github.com/yourusername/SimpleHTTPServe.git
 ```
+
+### Next Steps
+1. read port from terminal/config
