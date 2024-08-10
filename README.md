@@ -20,6 +20,7 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/yourusername/SimpleHTTP.git
 cd SimpleHTTP
+```
 
 ## Usage
 ```python3
