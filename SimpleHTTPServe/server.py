@@ -7,16 +7,16 @@ from .response import Response, HtmlResponse
 logging.basicConfig(level=logging.INFO)
 
 class Server:
-    HOST, PORT = '', 8888 
+    DEFAULT_HOST, DEFAULT_PORT = '', 8888 
     DEFAULT_BYTE_READ = 1024
     DEFAULT_SOCK_LISTEN_SIZE = 5
-    sock = None
-    handler_db = dict()
 
-    def __init__(self):
+    def __init__(self, HOST=DEFAULT_HOST, PORT = DEFAULT_PORT):
+        self.HOST, self.PORT = HOST, PORT
+        self.sock = None
         self.handler_db = dict()
 
-    def start(self):
+    def start(self, *args, **kwargs):
         logging.info(f" Starting server on {self.PORT}")
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
