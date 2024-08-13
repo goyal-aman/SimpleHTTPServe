@@ -9,7 +9,6 @@ class App(Server):
         self.handler_db[unique_str] = method
 
     def start(self, *args, **kwargs):
-        print("IN START PORT", kwargs.get("PORT", None))
         super().start(*args, **kwargs)
     
     def getHandlers(self):
